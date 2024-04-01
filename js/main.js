@@ -19,6 +19,12 @@ window.addEventListener('scroll', scrollHeader);
 
 /*=============== SWIPER POPULAR ===============*/
 var swiperPopular = new Swiper('.popular-container', {
+	spaceBetween: 32,
+	grabCursor: true,
+	centeredSlides: true,
+	slidesPerView: 'auto',
+	loop: true,
+
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
@@ -26,6 +32,33 @@ var swiperPopular = new Swiper('.popular-container', {
 });
 
 /*=============== VALUE ACCORDION ===============*/
+const accordianItems = document.querySelectorAll('.value-accordian-item');
+
+accordianItems.forEach((item) => {
+	const accordianHeader = item.querySelector('.value-accordian-header');
+
+	accordianHeader.addEventListener('click', () => {
+		const openItem = document.querySelector('.accordian-open');
+
+		toggleItem(item);
+
+		if (openItem && openItem !== item) {
+			toggleItem(openItem);
+		}
+	});
+});
+
+const toggleItem = (item) => {
+	const accordianContent = item.querySelector('.value-accordian-content');
+
+	if (item.classList.contains('accordian-open')) {
+		accordianContent.removeAttribute('style');
+		item.classList.remove('accordian-open');
+	} else {
+		accordianContent.style.height = accordianContent.scrollHeight + 'px';
+		item.classList.add('accordian-open');
+	}
+};
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
