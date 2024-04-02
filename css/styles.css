@@ -161,12 +161,16 @@ button {
 	color: #fff;
 	display: inline-flex;
 	align-items: center;
-	column-gap: 0.25rem;
+	/* column-gap: 0.25rem; */
 	font-weight: var(--font-medium);
 	transition: 0.3s;
 }
 .nav-logo i {
 	font-size: 1rem;
+	margin-left: 0.25rem;
+}
+.nav-logo sup {
+	color: var(--second-color);
 }
 .nav-logo:hover {
 	color: var(--first-color);
@@ -574,6 +578,38 @@ button {
 }
 
 /*=============== SUBSCRIBE ===============*/
+.subscribe {
+	padding: 2.5rem 0;
+}
+.subscribe-container {
+	background-color: var(--first-color);
+	padding: 3rem 2rem;
+	border-radius: 1.25rem;
+	border: 6px solid var(--first-color-light);
+	text-align: center;
+}
+.subscribe-title {
+	font-size: var(--h2-font-size);
+	color: #fff;
+	margin-bottom: 1rem;
+}
+.subscribe-title sup {
+	color: var(--second-color);
+	vertical-align: middle;
+}
+.subscribe-description {
+	color: hsl(228, 90%, 92%);
+	font-size: var(--small-font-size);
+	margin-bottom: 2rem;
+}
+.subscribe-btn {
+	border: 2px solid #fff;
+	background: var(--first-color-light);
+	font-size: var(--small-font-size);
+}
+.subscribe-btn:hover {
+	background-color: var(--first-color);
+}
 
 /*=============== FOOTER ===============*/
 
